@@ -1,0 +1,51 @@
+{
+  "name": "tyrell",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "antd": "^2.13.6",
+    "husky": "^0.14.3",
+    "jwt-decode": "^2.2.0",
+    "konva": "^1.7.5",
+    "lint-staged": "^4.2.3",
+    "moment": "^2.19.1",
+    "node-sass-chokidar": "^0.0.3",
+    "npm-run-all": "^4.1.1",
+    "prettier": "^1.7.4",
+    "prop-types": "^15.6.0",
+    "react": "^16.0.0",
+    "react-apollo": "^1.4.16",
+    "react-bootstrap": "^0.31.5",
+    "react-dom": "^16.0.0",
+    "react-flexbox-grid": "^1.1.5",
+    "react-konva": "^1.1.5",
+    "react-layout-components": "^3.0.6",
+    "react-live-clock": "^2.0.1",
+    "react-moment": "^0.6.5",
+    "react-particles-js": "^2.1.0",
+    "react-redux": "^5.0.6",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-router-redux": "^5.0.0-alpha.6",
+    "react-scripts": "1.0.14",
+    "redux": "^3.7.2",
+    "rss-to-json": "^1.0.3",
+    "sweetalert": "^2.0.8",
+    "xml2js": "^0.4.19"
+  },
+  "proxy": "http://localhost:8080/",
+  "scripts": {
+    "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
+    "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
+    "start-js": "react-scripts start",
+    "start": "npm-run-all -p watch-css start-js",
+    "build": "npm run build-css && react-scripts build",
+    "flow": "flow",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.0",
+    "flow-bin": "^0.57.3"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "development": {
+    "username": "skynet",
+    "password": "hmfic",
+    "database": "raptor_dev",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "skynet",
+    "password": "hmfic",
+    "database": "raptor_prods",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}

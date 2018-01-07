@@ -1,0 +1,10 @@
+.content_wrap2 {
+  background-color: #4c5770;
+  margin: 0 auto;
+}
+
+.row-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-row-gap: 300px;
+}

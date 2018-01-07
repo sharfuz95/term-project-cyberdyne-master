@@ -1,0 +1,222 @@
+@import url("https://fonts.googleapis.com/css?family=Inconsolata:400,700|Montserrat:300,300i,400,400i,700,700i");
+
+$almostWhite: #ebffff;
+$terminator: #ff0000;
+$elephant: #0c383e;
+$white: #fff;
+$mono: "Inconsolata", monospace;
+
+.container__item {
+  margin: 0 auto 40px;
+}
+
+.landing-page-container {
+  width: 100%;
+  min-height: 100%;
+  position: absolute;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("./Great_Lakes_NASA.jpeg");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  overflow: hidden;
+  font-family: $mono;
+  color: $white;
+  display: flex;
+  align-items: center;
+}
+
+.container__item {
+  margin: 0 auto;
+}
+
+.content__wrapper {
+  max-width: 1200px;
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.coords {
+  transform: rotate(-90deg) translateY(50%);
+  position: relative;
+  align-self: flex-end;
+  padding-bottom: 25rem;
+  text-transform: uppercase;
+
+  .tz {
+    color: $terminator;
+  }
+}
+
+.ellipses-container {
+  width: 30rem;
+  height: 30rem;
+  border-radius: 50%;
+  // margin: 0 auto;
+  position: relative;
+
+  .greeting {
+    position: absolute;
+    top: 11.6rem;
+    left: 13rem;
+    right: 0;
+    margin: 0 auto;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.75);
+    letter-spacing: 3rem;
+    font-size: 2.2rem;
+    font-weight: 400;
+    opacity: 0.5;
+  }
+}
+
+.ellipses {
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  border-style: solid;
+}
+
+.ellipses__outer--thin {
+  width: 100%;
+  height: 100%;
+  border-width: 1px;
+  border-color: rgba(215, 221, 235, 0.8);
+  animation: ellipsesOrbit 30s ease-in-out infinite;
+
+  &:after {
+    content: "";
+    background-image: url("./ellipses-dial.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    opacity: 0.6;
+  }
+}
+
+.ellipses__outer--thick {
+  width: 99.5%;
+  height: 99.5%;
+  border-color: $almostWhite transparent;
+  border-width: 3px;
+  transform: rotate(-45deg);
+  box-shadow: 0px 0px 10px 2px rgba(117, 182, 255, 0.5),
+    0px 0px 30px 2px rgba(105, 135, 255, 0.3);
+  animation: ellipsesRotate 30s ease-in-out infinite;
+}
+
+.ellipses__orbit {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-width: 2px;
+  border-color: $almostWhite;
+  top: 0.5rem;
+  right: 6.75rem;
+
+  &:before {
+    content: "";
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: $terminator;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes ellipsesRotate {
+  0% {
+    transform: rotate(-45deg);
+  }
+
+  100% {
+    transform: rotate(-405deg);
+  }
+}
+
+@keyframes ellipsesOrbit {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+$color: #2194E0;
+
+@keyframes sheen {
+  0% {
+    transform: skewY(-45deg) translateX(0);
+  }
+  100% {
+    transform: skewY(-45deg) translateX(12.5em);
+  }
+}
+
+.wrapper {
+  display: block;
+  position: absolute;
+  top: 60%;
+  left: 85%;
+  transform: translate(-50%, -50%);
+}
+.wrapper2 {
+  display: block;
+  position: absolute;
+  top: 60%;
+  left: 105%;
+  transform: translate(-50%, -50%);
+}
+.button {
+  padding: 0.75em 2em;
+  text-align: center;
+  text-decoration: none;
+  color: $color;
+  border: 2px solid $color;
+  font-size: 24px;
+  display: inline-block;
+  border-radius: 0.3em;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  &:before {
+    content: "";
+    background-color: rgba(255,255,255,0.5);
+    height: 100%;
+    width: 3em;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -4.5em;
+    transform: skewX(-45deg) translateX(0);
+    transition: none;
+  }
+  &:hover {
+    background-color: $color;
+    color: #fff;
+    border-bottom: 4px solid darken($color, 10%);
+    &:before {
+      transform: skewX(-45deg) translateX(13.5em);
+     transition: all 0.5s ease-in-out;
+    }
+  }
+}
+
+// special effect credits to https://codemyui.com/ghost-button-glint-effect-3d-button/
